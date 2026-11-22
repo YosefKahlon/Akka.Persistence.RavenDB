@@ -59,7 +59,7 @@ namespace Akka.Persistence.RavenDb.Journal
             BecomeStacked(WaitingForInitialization);
         }
 
-        public IStash Stash { get; set; }
+        public IStash Stash { get; set; } = null!; // Injected by Akka after construction
 
         private bool WaitingForInitialization(object message)
         {

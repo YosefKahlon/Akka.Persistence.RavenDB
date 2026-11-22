@@ -103,7 +103,7 @@ namespace Akka.Persistence.RavenDb
                 {
                     return new Status.Success(NotUsed.Instance);
                 }
-                catch (DatabaseDisabledException e)
+                catch (DatabaseDisabledException)
                 {
                     //will retry on this
                 }
@@ -155,7 +155,7 @@ namespace Akka.Persistence.RavenDb
                     //TODO stav: is cancelled due to Akka - we don't need the indexes anymore. Or due to timeout - need to return failure
                     return new Status.Success(NotUsed.Instance);
                 }
-                catch (DatabaseDisabledException e)
+                catch (DatabaseDisabledException)
                 {
                     //database locked, try again
                 }
