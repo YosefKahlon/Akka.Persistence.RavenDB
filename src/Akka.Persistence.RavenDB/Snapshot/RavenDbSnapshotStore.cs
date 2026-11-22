@@ -51,7 +51,7 @@ namespace Akka.Persistence.RavenDb.Snapshot
             BecomeStacked(WaitingForInitialization);
         }
 
-        public IStash Stash { get; set; }
+        public IStash Stash { get; set; } = null!; // Injected by Akka after construction
 
         private bool WaitingForInitialization(object message)
         {

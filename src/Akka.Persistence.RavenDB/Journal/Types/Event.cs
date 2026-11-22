@@ -48,7 +48,7 @@ namespace Akka.Persistence.RavenDb.Journal.Types
             return e;
         }
 
-        public static Persistent Deserialize(Akka.Serialization.Serialization serialization, Event @event, IActorRef sender)
+        public static Persistent Deserialize(Akka.Serialization.Serialization serialization, Event @event, IActorRef? sender)
         {
             if (@event.SerializationId == 1)
                 return new Persistent(@event.Payload, @event.SequenceNr, @event.PersistenceId, @event.Manifest, @event.IsDeleted, sender, @event.WriterGuid,

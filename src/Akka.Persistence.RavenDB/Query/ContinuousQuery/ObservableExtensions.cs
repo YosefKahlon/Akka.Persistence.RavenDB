@@ -9,10 +9,10 @@ namespace Akka.Persistence.RavenDb.Query.ContinuousQuery
         private class ActionObserver<T> : IObserver<T>
         {
             private readonly Action<T> _onNext;
-            private readonly Action<Exception> _onError;
-            private readonly Action _onCompleted;
+            private readonly Action<Exception>? _onError;
+            private readonly Action? _onCompleted;
 
-            public ActionObserver(Action<T> onNext, Action<Exception> onError = null, Action onCompleted = null)
+            public ActionObserver(Action<T> onNext, Action<Exception>? onError = null, Action? onCompleted = null)
             {
                 _onNext = onNext;
                 _onError = onError;

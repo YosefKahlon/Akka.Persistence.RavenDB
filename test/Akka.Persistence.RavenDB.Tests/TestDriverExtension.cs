@@ -8,7 +8,7 @@ namespace Akka.Persistence.RavenDb.Tests
     {
         public static bool Secure = false;
         public static readonly string[] SecureUrls = new[] { "https://a.akkatest.development.run/" };
-        public static readonly string? CertificatePath = @"dummyClientCert.pfx";
+        public static readonly string CertificatePath = @"dummyClientCert.pfx";
         public static readonly string CertificatePassword = "1234";
         public static string[] Urls = new[] { "http://localhost:8080" };
 
